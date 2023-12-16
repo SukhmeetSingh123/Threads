@@ -44,7 +44,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 
   const [files, setFiles] = useState<File[]>([]);
 
-  const form = useForm<z.infer<typeof UserValidation>>({
+  const form = useForm({
     resolver: zodResolver(UserValidation),
     defaultValues: {
       profile_photo: user?.image ? user.image : "",
